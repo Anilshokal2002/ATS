@@ -1,29 +1,23 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
+import { IMAGE } from '../Constant/Images';
 import DatePicker from 'react-native-date-picker'
-import { IMAGE } from '../Constant/Images'
 
-const datePicker = ({
-    labelText ={},
-    placeholder ={},
+const Date = ({
+    clicked,
+    text
 }) => {
+    const [selectedLanguage, setSelectedLanguage] = useState('');
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
-
     return (
-        <>
-            {labelText ?
-                <View style={[styles.label, { flexDirection: "row" }]}>
-                    <View style={{ height: 16, width: 2, backgroundColor: Colors.primary }}></View>
-                    <Text style={styles.labelText}>{labelText}<Text style={{ color: "red" }}>*</Text></Text>
-                </View> : null}
+        <View>
             <TouchableOpacity
                 onPress={() => setOpen(true)}
                 style={styles.TouchableOpacity}
             >
                 <Text style={{ fontWeight: '600' }}>
-                    {placeholder}
-                    {()=>{setDate(date)}}
+                    Date
                 </Text>
                 <Image
                     source={IMAGE.Calender}
@@ -32,7 +26,6 @@ const datePicker = ({
             </TouchableOpacity>
             <DatePicker
                 modal
-                mode="date"
                 open={open}
                 date={date}
                 onConfirm={(date) => {
@@ -43,14 +36,13 @@ const datePicker = ({
                     setOpen(false)
                 }}
             />
-        </>
+        </View>
     )
 }
 
-export default datePicker
+export default Date
 
 const styles = StyleSheet.create({
-
     TouchableOpacity: {
         width: 327,
         height: 48,
@@ -69,14 +61,4 @@ const styles = StyleSheet.create({
         width: 15,
         height: 15
     },
-    labelText: {
-        color: Colors.black,
-        paddingLeft: 5
-    },
-    label: {
-        width: 327,
-        alignSelf: "center",
-        marginTop: 8,
-    },
 })
-

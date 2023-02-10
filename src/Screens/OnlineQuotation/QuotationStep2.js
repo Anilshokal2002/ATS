@@ -9,24 +9,22 @@ import Textinput from '../../Components/textInput'
 import DatePicker from '../../Components/DatePicker'
 
 
-
-const area = [
-  { Language: 'jaipur', },
-  { Language: 'jaipur', },
-  { Language: 'jaipur', },
-  { Language: 'jaipur', },
-  { Language: 'jaipur', },
-  { Language: 'jaipur', },
-]
-const Country = [
-  { Language: 'India', },
-  { Language: 'French', },
-  { Language: 'Italy', },
-  { Language: 'Germany', },
-  { Language: 'Angola', },
-]
-
 const QuotationStep2 = ({ navigation }) => {
+  const area = [
+    { Language: 'jaipur', },
+    { Language: 'jaipur', },
+    { Language: 'jaipur', },
+    { Language: 'jaipur', },
+    { Language: 'jaipur', },
+    { Language: 'jaipur', },
+  ]
+  const Country = [
+    { Language: 'India', },
+    { Language: 'French', },
+    { Language: 'Italy', },
+    { Language: 'Germany', },
+    { Language: 'Angola', },
+  ]
   const [color,setColor]=useState(true)
   return (
     <View style={{ flex: 1 }}>
@@ -70,7 +68,6 @@ const QuotationStep2 = ({ navigation }) => {
 
           </View>
 
-          <View>
             <Textinput
               text={"Select your Geographical area"}
               datas={area}
@@ -89,7 +86,6 @@ const QuotationStep2 = ({ navigation }) => {
               labelText={"Ending date"}
               placeholder='Select date'
             />
-          </View>
 
         </View>
       </View>

@@ -42,6 +42,4 @@ export const IMAGE={
     editIcon:require("../assets/images/editIcon.png"),
     RectangleStep:require("../assets/images/Rectanglestep.png"),
     Calender:require("../assets/images/calendar.png"),
-
-
 }           

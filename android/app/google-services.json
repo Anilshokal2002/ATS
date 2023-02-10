@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "175850794070",
+    "project_id": "assuretonsport-195c9",
+    "storage_bucket": "assuretonsport-195c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175850794070:android:1cb400313d9e697c1e1ff7",
+        "android_client_info": {
+          "package_name": "com.assuretonsport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175850794070-ve8075o8omvbsjvmm748sgpv0uactird.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.assuretonsport",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "175850794070-1ai3v7a5vodg8qn9gkrficmf8os8nk17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8wr5OmQumILq78hNm-hnNzsMcI1Tq3-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175850794070-1ai3v7a5vodg8qn9gkrficmf8os8nk17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

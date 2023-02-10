@@ -18,7 +18,7 @@ const Contact = ({ navigation }) => {
           message: '',
           contact: '',
         }}
-        onSubmit={values => alert(JSON.stringify(values))}
+        onSubmit={values => (JSON.stringify(values))}
         // onSubmit={values => {goToList(values)}}
         validationSchema={yup.object().shape({
           name: yup.string().required('Please,Provide your name!'),
