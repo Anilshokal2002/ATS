@@ -4,7 +4,7 @@ import { IMAGE } from '../../Constant/Images'
 import Buttons from '../../Components/Button'
 import Colors from '../../Constant/Colors'
 import AccountData from '../../Components/AccountData'
-
+import Auth from "@react-native-firebase/auth"
 const AccountInfo = () => {
     return (
         <ScrollView
@@ -18,7 +18,7 @@ const AccountInfo = () => {
                             <Image source={IMAGE.Waving_hand} style={{ height: 16, width: 16 }} />
                         </View>
                         <View>
-                            <Text style={styles.Arefine}>Arefin Shuvo</Text>
+                            <Text style={styles.Arefine}>{Auth().currentUser.email}</Text>
                         </View>
                     </View>
                     <TouchableOpacity style={styles.TouchableOpacity}

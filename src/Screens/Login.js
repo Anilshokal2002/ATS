@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, CheckBox, Form } from 'react-native'
+import { StyleSheet, Text, View, Image, CheckBox, Form, Alert } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { IMAGE } from '../Constant/Images'
 import { ScrollView } from 'react-native'
@@ -7,32 +7,35 @@ import { TouchableOpacity } from 'react-native'
 import Buttons from '../Components/Button'
 import { Formik } from 'formik';
 import * as yup from 'yup';
-
+import auth from '@react-native-firebase/auth';
+import { StackActions } from '@react-navigation/native'
 
 const Login = ({ navigation }) => {
-  const [hidepassword, setHidepassword] = useState(true)
+  const [hidepassword, setHidepassword] = useState(false)
   const [isSelected, setSelection] = useState(false);
+const [email ,setEmail]=useState("")
+const[password,setPassword] =useState("")
+const [message, setMessage] = useState("")
+const handleLogin = async ()=>{
+  try {
+    if(email.length >0 && password.length >0 ){
+      const isUserCreated = await auth().createUserWithEmailAndPassword(
+        email,
+        password,
+        )
+        setMessage("")
+      console.log(">>>>>>",isUserCreated);
+      navigation.dispatch(StackActions.replace("Home"))
+    } else {
+      Alert.alert("Please enter required data")
+    }
+
+  } catch (error) {
+    setMessage(error.message);
+  }
+}
 
   return (
-    <Formik
-      initialValues={{
-        email: '',
-        password: '',
-      }}
-      // onSubmit={values => (JSON.stringify(values))}
-      onSubmit={() => { navigation.navigate("Tab") }}
-      validationSchema={yup.object().shape({
-        email: yup.string().email().required('Please,Provide your email!'),
-        password: yup.string().min(4).required('Please,Provide your password!'),
-      })}>
-      {({
-        values,
-        handleChange,
-        errors,
-        setFieldTouched,
-        touched,
-        handleSubmit,
-      }) => (
         <ScrollView style={{}}>
           <View>
             <View>
@@ -45,18 +48,13 @@ const Login = ({ navigation }) => {
                 placeholder='Enter your Mail address'
                 icon={IMAGE.Mail}
                 style={{ height: 12, width: 16.2, }}
-                value={values.email}
-                onChangeText={handleChange('email')}
+                value={email}
+                onChangeText={value=>setEmail(value)}
               />
-              {touched.email && errors.email && (
-                <Text style={styles.error}>
-                  {errors.email}
-                </Text>
-              )}
               <Text style={styles.label}>Password</Text>
               <CommonTextInput
-                value={values.password}
-                onChangeText={handleChange('password')}
+                value={password}
+                onChangeText={value=>setPassword(value)}
                 placeholder='Enter your Password'
                 icon={IMAGE.Lock}
                 style={{ height: 14.4, width: 11.4, }}
@@ -64,11 +62,9 @@ const Login = ({ navigation }) => {
                 onPress={() => { setHidepassword(!hidepassword) }}
                 passwordIcon={(hidepassword) ? require('../assets/images/visibility.png') : require('../assets/images/visibility_off.png')}
               />
-              {touched.password && errors.password && (
-                <Text style={styles.error}>
-                  {errors.password}
+              <Text style={styles.error}>
+                  {message}
                 </Text>
-              )}
               <TouchableOpacity style={[styles.forgotTouchable, { alignSelf: "flex-end" }]} >
                 <Text style={styles.forgotPassword} >Forgot Password</Text>
               </TouchableOpacity>
@@ -76,7 +72,7 @@ const Login = ({ navigation }) => {
             <View style={{}}>
               <Buttons
                 btn_text={'Continue'}
-                on_press={handleSubmit}
+                on_press={handleLogin}
               />
               <Buttons
                 btn_text={'Get Online Quote'}
@@ -89,8 +85,6 @@ const Login = ({ navigation }) => {
             </View>
           </View>
         </ScrollView>
-      )}
-    </Formik>
   )
 }
 
@@ -150,5 +144,6 @@ const styles = StyleSheet.create({
   error: {
     fontSize: 13, color: '#FF0D10',
     paddingHorizontal: "6%",
+    // marginVertical:"6%"
   }
 })

@@ -6,6 +6,7 @@ import { ScrollView } from 'react-native'
 import Buttons from '../../Components/Button'
 import DataItem from '../../Components/DataItem'
 import DataItemContract from '../../Components/DataItemContract'
+import Auth from "@react-native-firebase/auth"
 
 
 const Home = ({ navigation }) => {
@@ -21,7 +22,7 @@ const Home = ({ navigation }) => {
             <Image source={IMAGE.Waving_hand} style={{ height: 16, width: 16 }} />
           </View>
           <View>
-            <Text style={styles.Arefine}>Arefin Shuvo</Text>
+            <Text style={styles.Arefine}>{Auth().currentUser.email}</Text>
           </View>
         </View>
         <TouchableOpacity style={styles.TouchableOpacity}

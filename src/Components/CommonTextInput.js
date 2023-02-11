@@ -1,11 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native'
-// import Colors from '../Constant/Colors';
-// import { Colors } from '../constants';
-// import { IMAGE } from '../constants/Images';
 import Colors from "../Constant/Colors"
 const CommonTextInput = ({
-
     placeholder = '',
     style,
     keyboardType = "default",
@@ -18,44 +14,33 @@ const CommonTextInput = ({
     secureTextEntry,
     labelText,
     inputStyle,
-    value ={},
+    value = {},
 }) => {
     return (
         <ScrollView
-      showsVerticalScrollIndicator={false}
-    >
-        <View style={{ width: 327, alignSelf: "center" }}>
-
-            {labelText ?
-                <View style={[styles.label, { flexDirection: "row" }]}>
-                    <View style={{ height: 16, width: 2, backgroundColor: Colors.primary }}></View>
-                    <Text style={styles.labelText}>{labelText}<Text style={{ color: "red" }}>*</Text></Text>
-                </View> : null}
-
-
-            <View style={[styles.TextInputStyle, inputStyle]} >
-                {icon ?
-                    <View style={{ justifyContent: "center", alignItems: "center" }}>
-                        <Image source={icon} style={[styles.image, style]}></Image>
+            showsVerticalScrollIndicator={false}
+        >
+            <View style={{ width: 327, alignSelf: "center" }}>
+                {labelText ?
+                    <View style={[styles.label, { flexDirection: "row" }]}>
+                        <View style={{ height: 16, width: 2, backgroundColor: Colors.primary }}></View>
+                        <Text style={styles.labelText}>{labelText}<Text style={{ color: "red" }}>*</Text></Text>
                     </View> : null}
-
-                {/* {icon ? */}
+                <View style={[styles.TextInputStyle, inputStyle]} >
+                    {icon ?
+                        <View style={{ justifyContent: "center", alignItems: "center" }}>
+                            <Image source={icon} style={[styles.image, style]}></Image>
+                        </View> : null}
+                    {/* {icon ? */}
                     <View>
-                    <TextInput onChangeText={(text) => onChangeText(text)} style={[styles.input, ]} placeholder={placeholder} placeholderTextColor="#888185"
-                        keyboardType={keyboardType}
-                        secureTextEntry={secureTextEntry}
-                        value={value}
-                    /> 
-                    
-                    </View>
-                    {/* : */}
-                    {/* <View>
                         <TextInput onChangeText={(text) => onChangeText(text)} style={[styles.input,]} placeholder={placeholder} placeholderTextColor="#888185"
                             keyboardType={keyboardType}
                             secureTextEntry={secureTextEntry}
-                        />  
-                    </View>} */}
-                    <View style={{alignItems:"center",justifyContent:"center",marginStart:"90%"}}>
+                            value={value}
+                        />
+                    </View>
+                    {/* : */}
+                    <View style={{ alignItems: "center", justifyContent: "center", marginStart: "90%" }}>
                         {
                             passwordIcon &&
                             <TouchableOpacity style={styles.touchable}
@@ -64,14 +49,9 @@ const CommonTextInput = ({
                                 <Image source={passwordIcon} style={styles.image2}></Image>
                             </TouchableOpacity>
                         }
-                        {/* <TouchableOpacity style={styles.touchable}
-                                onPress={onPress}
-                            >
-                                <Image source={passwordIcon} style={styles.image2}></Image>
-                            </TouchableOpacity> */}
-                        </View>   
+                    </View>
+                </View>
             </View>
-        </View>
         </ScrollView>
     )
 }
@@ -81,43 +61,33 @@ export default CommonTextInput;
 const styles = StyleSheet.create({
     image: {
         tintColor: "#000E32",
-
     },
     TextInputStyle: {
         flexDirection: 'row',
-        // justifyContent: 'space-between',
-        // alignItems: 'center',
         backgroundColor: "#fff",
         width: 327,
         borderRadius: 10,
         height: 48,
         paddingLeft: 10,
         marginTop: 10,
-
     },
     input: {
         fontFamily: 'OpenSans-Medium',
-
-        // paddingLeft:5,
         justifyContent: "center",
-        // alignSelf: "center",
         fontSize: 14,
         color: "#797D85",
         lineHeight: 20,
         fontWeight: "400",
         position: 'absolute',
         width: 327,
-
     },
     touchable: {
         width: 40,
-        height:40,
+        height: 40,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#FFFF",
-        position:"absolute",
-        // backgroundColor: "red",
-
+        position: "absolute",
     },
     image2: {
         height: 15.65,
@@ -127,9 +97,6 @@ const styles = StyleSheet.create({
     },
     label: {
         width: 327,
-        // borderLeftWidth: 1.5, 
-        // paddingLeft: 10, 
-        // borderColor: Colors.primary ,
         alignSelf: "center",
         marginTop: 8,
     },

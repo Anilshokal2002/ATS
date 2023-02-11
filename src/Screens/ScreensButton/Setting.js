@@ -5,6 +5,7 @@ import Colors from '../../Constant/Colors'
 import { IMAGE } from '../../Constant/Images'
 import SettingComponent from "../../Components/SettingComponent"
 import { Modal } from 'react-native'
+import auth from '@react-native-firebase/auth';
 
 const Setting = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -53,13 +54,13 @@ const Setting = ({ navigation }) => {
                 }}>
                 <View style={styles.modal}>
                     <View style={styles.modalView}>
-                        <View style={{flexDirection:"row",alignItems:"center",padding:"2%"}}>
+                        <View style={{ flexDirection: "row", alignItems: "center", padding: "2%" }}>
                             <Image source={IMAGE.accountFile} style={styles.Image} />
-                            <Text style={{fontSize:16,lineHeight:24,color:Colors.black}}>Log out from the account</Text>
+                            <Text style={{ fontSize: 16, lineHeight: 24, color: Colors.black }}>Log out from the account</Text>
                         </View>
-                        <View style={{alignSelf:"center",padding:"3%"}}>
-                            <Text style={{lineHeight:20,color:Colors.black}}>
-                            Are you sure you would like to sign out from your Assure Ton Sport account?
+                        <View style={{ alignSelf: "center", padding: "3%" }}>
+                            <Text style={{ lineHeight: 20, color: Colors.black }}>
+                                Are you sure you would like to sign out from your Assure Ton Sport account?
                             </Text>
                         </View>
                         <View style={styles.buttons}>
@@ -69,8 +70,11 @@ const Setting = ({ navigation }) => {
                                 <Text style={styles.textStyle}>cancel</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={[styles.buttonClose ,{backgroundColor:"#E8503A"}]}
-                                onPress={() => navigation.navigate("Login")}>
+                                style={[styles.buttonClose, { backgroundColor: "#E8503A" }]}
+                                onPress={async () => {
+                                    await auth().signOut()
+                                    navigation.navigate("OnboardingScreen")
+                                }}>
                                 <Text style={styles.textStyle}>Log out</Text>
                             </TouchableOpacity>
                         </View>
@@ -92,22 +96,22 @@ const styles = StyleSheet.create({
     },
     modalView: {
         backgroundColor: 'white',
-        elevation:10,
+        elevation: 10,
         width: 327,
-        borderRadius:10
+        borderRadius: 10
 
     },
     buttons: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
-        padding:"5%"
+        padding: "5%"
     },
     buttonClose: {
         padding: "5%",
         backgroundColor: Colors.primary,
         borderRadius: 10,
-        paddingHorizontal:"15%"
+        paddingHorizontal: "15%"
     },
     Image: {
         height: 48,

@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { NavigationContainer } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -26,21 +26,21 @@ import FrequentlyAskedQuestion from '../Screens/ScreensButton/Setting/Frequently
 import CustomContactForm from '../Screens/ScreensButton/CustomContactForm';
 import AccountInfo from '../Screens/ScreensButton/AccountInfo';
 import ChangePassword from '../Screens/ScreensButton/Setting/ChangePassword';
+import Home from '../Screens/Tabes/Home';
 
 const Stack = createNativeStackNavigator();
 
 export default function MainNavigation() {
-    useEffect(() => {
-        SplashScreen.hide()
-    }, [])
     return (
         <NavigationContainer >
             <Stack.Navigator screenOptions={{ headerShown: false }}
-                initialRouteName='OnboardingScreen' >
+                initialRouteName='OnboardingScreen'
+                >
                 <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
                 <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen name='GetOnlineQuota' component={GetOnlineQuota} />
                 <Stack.Screen name='Tab' component={TabNavigation} />
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name='GetOnlineQuota' component={GetOnlineQuota} />
                 <Stack.Screen name='QuotationStep1' component={QuotationStep1} />
                 <Stack.Screen name='QuotationStep2' component={QuotationStep2} />
                 <Stack.Screen name='QuotationStep3' component={QuotationStep3} />
@@ -49,16 +49,16 @@ export default function MainNavigation() {
                 <Stack.Screen name='Estimations' component={Estimations} />
                 <Stack.Screen name='Contracts' component={Contracts} />
                 <Stack.Screen name='ClubRegistration' component={ClubRegistration} />
-                <Stack.Screen name='ReportDamage' component={ReportDamage} /> 
-                <Stack.Screen name="Setting" component={Setting} />              
-                <Stack.Screen name="EditAccount" component={EditAccount} /> 
-                <Stack.Screen name="OurFormulas" component={OurFormulas} /> 
-                <Stack.Screen name="SportsList" component={SportsList} /> 
-                <Stack.Screen name='TermsAndConditions' component={TermsAndConditions}/>
-                <Stack.Screen name='FrequentlyAskedQuestion' component={FrequentlyAskedQuestion}/>
-                <Stack.Screen name='CustomContactForm' component={CustomContactForm}/>
-                <Stack.Screen name='AccountInfo' component={AccountInfo}/>
-                <Stack.Screen name='ChangePassword' component={ChangePassword}/>
+                <Stack.Screen name='ReportDamage' component={ReportDamage} />
+                <Stack.Screen name="Setting" component={Setting} />
+                <Stack.Screen name="EditAccount" component={EditAccount} />
+                <Stack.Screen name="OurFormulas" component={OurFormulas} />
+                <Stack.Screen name="SportsList" component={SportsList} />
+                <Stack.Screen name='TermsAndConditions' component={TermsAndConditions} />
+                <Stack.Screen name='FrequentlyAskedQuestion' component={FrequentlyAskedQuestion} />
+                <Stack.Screen name='CustomContactForm' component={CustomContactForm} />
+                <Stack.Screen name='AccountInfo' component={AccountInfo} />
+                <Stack.Screen name='ChangePassword' component={ChangePassword} />
             </Stack.Navigator>
         </NavigationContainer>
     );

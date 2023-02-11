@@ -6,6 +6,8 @@ import Buttons from "../../Components/Button"
 import Colors from '../../Constant/Colors'
 import AccountData from '../../Components/AccountData'
 import AccountData1 from '../../Components/AccountDate1'
+import Auth from "@react-native-firebase/auth"
+
 const FormData = ({ title, input, dataStyle }) => {
   return (
     <View style={[{ marginVertical: 10 }, { dataStyle }]}>
@@ -30,7 +32,7 @@ const MyAccount = ({ navigation }) => {
               <Image source={IMAGE.Waving_hand} style={{ height: 16, width: 16 }} />
             </View>
             <View>
-              <Text style={styles.Arefine}>Arefin Shuvo</Text>
+              <Text style={styles.Arefine}>{Auth().currentUser.email}</Text>
             </View>
           </View>
           <TouchableOpacity style={styles.TouchableOpacity}
@@ -63,7 +65,7 @@ const MyAccount = ({ navigation }) => {
                 />
                 <FormData
                   title={"E-mail address"}
-                  input={"uixshuvo@gmail.com"}
+                  input={Auth().currentUser.email}
                 />
                 <FormData
                   title={"Address1"}
