@@ -1,13 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { IMAGE } from '../../Constant/Images'
 import Buttons from '../../Components/Button'
 import Colors from '../../Constant/Colors'
 import AccountData from '../../Components/AccountData'
 import Auth from "@react-native-firebase/auth"
+import AccountData1 from '../../Components/AccountDate1'
 const AccountInfo = () => {
+    const [show, setShow] = useState(true)
+    const [color, setColor] = useState(true)
     return (
         <ScrollView
+        style={{flex:1}}
             showsVerticalScrollIndicator={false}
         >
             <View style={{ margin: 15, }}>
@@ -29,17 +33,25 @@ const AccountInfo = () => {
                 </View>
                 <View style={styles.buttonComponent}>
                     <Buttons
-                        style={{ width: 158, height: 40, backgroundColor: Colors.primary ,borderRadius:5}}
+                        style={[styles.buttonColor, color ? { backgroundColor: Colors.primary } : { backgroundColor: "#FFF", }]}
                         backgroundColor={Colors.primary}
                         btn_text={'Estimations'}
-                        color="#FFF"
+                        color="#000"
+                        on_press={() => {
+                            setShow(true)
+                            setColor(true)
+                        }}
                     />
                     <Buttons
-                        style={{ width: 158, height: 40, backgroundColor: "#fFF",borderRadius:5 }}
+                        style={[styles.buttonColor, color ? { backgroundColor: "#FFF" } : { backgroundColor: Colors.primary }]}
                         btn_text={"Contracts"}
+                        color="#000"
+                        on_press={() => {
+                            setShow(false)
+                            setColor(false)
+                        }}
                     />
                 </View>
-                <ScrollView>
                     <View style={{ backgroundColor: "#EDF0F8", borderRadius: 12, }}>
                         <View>
                             <View style={styles.dataLabel}>
@@ -49,11 +61,9 @@ const AccountInfo = () => {
                                 <Text style={styles.DataLabelText}>      NP</Text>
                                 <Text style={styles.DataLabelText}>PRICE</Text>
                             </View>
-                            <AccountData />
-                            <AccountData />
+                            {show ? <AccountData /> : <AccountData1 />}
                         </View>
                     </View>
-                </ScrollView>
             </View>
         </ScrollView>
     )
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
     buttonComponent: {
         backgroundColor: "#fff",
         flexDirection: "row",
-        width: 327,
+        // width: 327,
         height: 48,
         borderRadius: 8,
         alignItems: "center",
@@ -93,9 +103,15 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderRadius: 8,
         alignItems: "center",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
     },
     DataLabelText: {
         color: "#ffffff"
+    },
+    buttonColor: {
+        width: "50%",
+        height: 40,
+        backgroundColor: "#fFF",
+        borderRadius: 5,
     }
 })

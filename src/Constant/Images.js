@@ -42,4 +42,8 @@ export const IMAGE={
     editIcon:require("../assets/images/editIcon.png"),
     RectangleStep:require("../assets/images/Rectanglestep.png"),
     Calender:require("../assets/images/calendar.png"),
+    Google:require("../assets/images/google_icon.png"),
+    facebook:require("../assets/images/facebook_icon.png"),
+    apple:require("../assets/images/apple.png"),
+    
 }           

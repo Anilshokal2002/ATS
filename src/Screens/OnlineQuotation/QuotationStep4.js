@@ -79,9 +79,6 @@ export default QuotationStep4
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "#FFF",
-    margin: 20,
-    marginVertical: 10
-
+    marginHorizontal:"4%",
   }
 })

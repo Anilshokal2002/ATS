@@ -1,10 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { IMAGE } from '../Constant/Images'
-import RadioButton from './RadioButton'
 import Buttons from './Button'
 import Colors from '../Constant/Colors'
-
 const DATA = [
     {
         id: 1,
@@ -23,23 +21,20 @@ const DATA = [
         title: "50€",
     },
 ]
-
-
 const FormulaStep4Component = ({ formula_number, risk, src, Amount }) => {
     const [radio, setRadio] = useState(1)
-
     return (
-        <View>
+        <>
             <View style={{ backgroundColor: Colors.primary, marginVertical: 10, borderRadius: 8, padding: 10 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <View>
-                        <Text style={{ lineHeight: 20, fontWeight: "500", color: "#FFF" }}>
+                        <Text style={styles.text}>
                             FORMULA {formula_number}
                         </Text>
                         <Image source={src}
                             style={{ height: 60, width: 60, marginVertical: 8 }}
                         />
-                        <Text style={{ lineHeight: 20, fontWeight: "500", color: "#FFF", }}>
+                        <Text style={styles.text}>
                             Sport risk:{risk}
                         </Text>
                     </View>
@@ -50,7 +45,6 @@ const FormulaStep4Component = ({ formula_number, risk, src, Amount }) => {
                         </View>
                         <Text style={{ color: "#ffff", fontSize: 10, marginTop: 8 }}>Hospital daily allowances:</Text>
                         <View style={{ flexDirection: "row", marginVertical: 4 }}>
-
                             {DATA.map((data) => {
                                 return (
                                     <View style={[{ flexDirection: "row", }]}>
@@ -71,18 +65,16 @@ const FormulaStep4Component = ({ formula_number, risk, src, Amount }) => {
                                 )
                             })}
                         </View>
-                        <View>
                             <Buttons
-                                style={{ width: 124, height: 34, backgroundColor: "#FFF", borderRadius: 4, }}
+                                style={{ width: "95%", height: 34, backgroundColor: "#FFF", borderRadius: 4, }}
                                 btn_text={"More information"}
                                 color={Colors.primary}
                                 text_style={{ fontSize: 13 }}
                             />
-                        </View>
                     </View>
                 </View>
             </View>
-        </View>
+        </>
     )
 }
 
@@ -107,4 +99,9 @@ const styles = StyleSheet.create({
         width: 16,
         tintColor: "#FFF",
     },
+    text:{
+        lineHeight: 20,
+        fontWeight: "500",
+        color: "#FFF", 
+    }
 })

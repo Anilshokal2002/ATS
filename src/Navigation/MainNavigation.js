@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 // import { NavigationContainer } from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen';
 import OnboardingScreen from '../Screens/OnboardingScreen';
@@ -26,11 +26,12 @@ import FrequentlyAskedQuestion from '../Screens/ScreensButton/Setting/Frequently
 import CustomContactForm from '../Screens/ScreensButton/CustomContactForm';
 import AccountInfo from '../Screens/ScreensButton/AccountInfo';
 import ChangePassword from '../Screens/ScreensButton/Setting/ChangePassword';
-import Home from '../Screens/Tabes/Home';
 
 const Stack = createNativeStackNavigator();
 
-export default function MainNavigation() {
+export default function MainNavigation({navigation}) {
+
+
     return (
         <NavigationContainer >
             <Stack.Navigator screenOptions={{ headerShown: false }}
@@ -39,7 +40,6 @@ export default function MainNavigation() {
                 <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name='Tab' component={TabNavigation} />
-                <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name='GetOnlineQuota' component={GetOnlineQuota} />
                 <Stack.Screen name='QuotationStep1' component={QuotationStep1} />
                 <Stack.Screen name='QuotationStep2' component={QuotationStep2} />

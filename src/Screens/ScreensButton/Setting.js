@@ -6,8 +6,10 @@ import { IMAGE } from '../../Constant/Images'
 import SettingComponent from "../../Components/SettingComponent"
 import { Modal } from 'react-native'
 import auth from '@react-native-firebase/auth';
+import { StackActions } from '@react-navigation/native'
 
 const Setting = ({ navigation }) => {
+
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={{ flex: 1, }}>
@@ -73,7 +75,7 @@ const Setting = ({ navigation }) => {
                                 style={[styles.buttonClose, { backgroundColor: "#E8503A" }]}
                                 onPress={async () => {
                                     await auth().signOut()
-                                    navigation.navigate("OnboardingScreen")
+                                    // await GoogleSignin.signOut();
                                 }}>
                                 <Text style={styles.textStyle}>Log out</Text>
                             </TouchableOpacity>

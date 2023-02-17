@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, FlatL
 import React from 'react'
 import { IMAGE } from '../../Constant/Images'
 import { ScrollView } from 'react-native'
-// import { Colors } from 'react-native/Libraries/NewAppScreen'
 import Buttons from '../../Components/Button'
 import DataItem from '../../Components/DataItem'
 import DataItemContract from '../../Components/DataItemContract'
@@ -11,7 +10,7 @@ import Auth from "@react-native-firebase/auth"
 
 const Home = ({ navigation }) => {
   return (
-    <ScrollView
+    <ScrollView style={{flex:1}}
     showsVerticalScrollIndicator={false}
     >
     <View style={{ margin: 15 }}>
@@ -22,7 +21,9 @@ const Home = ({ navigation }) => {
             <Image source={IMAGE.Waving_hand} style={{ height: 16, width: 16 }} />
           </View>
           <View>
-            <Text style={styles.Arefine}>{Auth().currentUser.email}</Text>
+            <Text style={styles.Arefine}>
+            {Auth().currentUser.email}
+            </Text>
           </View>
         </View>
         <TouchableOpacity style={styles.TouchableOpacity}
@@ -103,10 +104,8 @@ const Home = ({ navigation }) => {
 export default Home
 const styles = StyleSheet.create({
   TouchableOpacity: {
-    alignSelf: "center",
-    height: 48, width: 48,
-    alignItems: "center",
-    justifyContent: "center"
+    height: 48, 
+    width: 48,
   },
   Arefine: {
     fontSize: 20,
@@ -114,9 +113,10 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   rectangle: {
-    height: 140,
-    width: 327,
+    height:140,
+    width: "100%",
     borderRadius: 16,
+    alignSelf:"center"
   },
   totalEstimations: {
     flexDirection: "row",

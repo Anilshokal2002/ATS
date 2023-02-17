@@ -21,7 +21,7 @@ const MyAccount = ({ navigation }) => {
   const [show, setShow] = useState(true)
   const [color ,setColor] =useState(true)
   return (
-    <ScrollView
+    <ScrollView style={{flex:1}}
       showsVerticalScrollIndicator={false}
     >
       <View style={{ margin: 15, }}>
@@ -103,7 +103,7 @@ const MyAccount = ({ navigation }) => {
 
           <View style={[styles.buttonComponent ]}>
             <Buttons
-              style={[styles.buttonColor,,color ? {backgroundColor:colors.primary  } : {backgroundColor:"#FFF" ,}]}
+              style={[styles.buttonColor,color ? {backgroundColor:colors.primary  } : {backgroundColor:"#FFF" ,}]}
               backgroundColor={Colors.primary}
               btn_text={'Estimations'}
               color="#000"
@@ -165,24 +165,21 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: "#fff",
-    width: 327,
+    width: "95%",
     borderRadius: 12,
     margin: 24,
     alignSelf: "center",
-
   },
   editComponent: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-
   },
   userText: {
     fontSize: 12,
     fontWeight: "500",
     color: colors.black,
     margin: 16,
-
   },
   editImage: {
     margin: 16,
@@ -196,17 +193,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   dataRow: {
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "center",
-    // marginRight: 20
-    // justifyContent:"space-around",
     marginHorizontal: "7%"
   },
   buttonComponent: {
     backgroundColor: "#fff",
     flexDirection: "row",
-    width: 327,
+    width: "100%",
     height: 48,
     borderRadius: 8,
     alignItems: "center",
@@ -228,7 +220,7 @@ const styles = StyleSheet.create({
     color: "#ffffff"
   },
   buttonColor:{ 
-    width: 158, 
+    width: "50%", 
     height: 40, 
     backgroundColor: "#fFF",
     borderRadius: 5

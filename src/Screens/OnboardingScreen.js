@@ -24,12 +24,14 @@ const countries = [
 ]
 
 const OnboardingScreen = ({ navigation }) => {
+
     useEffect(() => {
-        // auth().onAuthStateChanged((user) => {
-        //     const routeName =user!==null?"Home":"Login"
-        //     navigation.dispatch(StackActions.replace(routeName))
-        // })
+        auth().onAuthStateChanged((user) => {
+            const routeName =user!==null?"Tab":"Login"
+            navigation.navigate(routeName)
+        })
     }, [])
+
     return (
         <ScrollView style={styles.main}>
             <View style={styles.main}>
@@ -74,8 +76,6 @@ const OnboardingScreen = ({ navigation }) => {
 export default OnboardingScreen;
 
 const styles = StyleSheet.create({
-    main: {
-    },
     container: {
         alignSelf: 'center',
         flexDirection: 'column',
@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
     upView: {},
     image: {
         height: 346,
-        width: 327,
+        width:"90%",
         borderRadius: 12,
-        position: 'relative',
-        marginTop: 24
+        marginTop: 24,
+        alignSelf:"center"
     },
     text: {
         fontSize: 24,
@@ -98,22 +98,5 @@ const styles = StyleSheet.create({
         color: "#000E32",
         fontFamily: "Helvetica Now Display"
     },
-    text2: {
-        fontSize: 18,
-        fontWeight: '400',
-        paddingTop: 3,
-    },
-    TextInput: {
-        borderWidth: 0.5,
-        marginTop: 10,
-        height: 48,
-        width: 327,
-        padding: 10,
-        borderRadius: 8,
-        fontSize: 20,
-        backgroundColor: "#FFFFFF"
-    },
-    button: {
-        backgroundColor: 'red',
-    },
+
 });

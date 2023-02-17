@@ -1,5 +1,5 @@
 import { Image, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Tabes/Home';
 import OnlineQuotation from '../Screens/Tabes/OnlineQuotation';
@@ -10,7 +10,10 @@ import Colors from '../Constant/Colors';
 import { Stack } from '@react-native-material/core';
 const Tab = createBottomTabNavigator();
 
-const TabNavigation = () => {
+
+
+const TabNavigation = ({navigation}) => {
+
     return (
         <Tab.Navigator
             screenOptions={{
