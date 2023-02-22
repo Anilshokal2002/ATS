@@ -42,7 +42,7 @@ const DataItemContract = ({}) => {
 
     const renderItem = ({ item ,}) => {
         return (
-            <View>
+            <View style={{flex:1}}>
                 <View style={styles.centeredView}>
                     <Modal
                         animationType="fade"
@@ -118,7 +118,7 @@ const DataItemContract = ({}) => {
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{flex:1}}>
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
@@ -134,7 +134,7 @@ export default DataItemContract
 const styles = StyleSheet.create({
     item: {
         height: 48,
-        width: 327,
+        // width: 327,
         borderRadius: 8,
         backgroundColor: "#ffffff",
         flexDirection: "row",
@@ -154,9 +154,10 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
+        // alignSelf:"center"
     },
     modalView: {
-        backgroundColor: 'white',
+        backgroundColor:"#FFFFFF",
         borderRadius: 12,
         elevation: 5,
         width: 327

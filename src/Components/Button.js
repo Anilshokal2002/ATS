@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import { FULL_WIDTH } from './HOC/layout'
 // import  Colors  from '../Constant/Colors'
 
 const Buttons = ({on_press,btn_text ,style ,color,text_style }) => {
@@ -18,7 +19,9 @@ const styles = StyleSheet.create({
     TouchableOpacity:{
         justifyContent:'center',
         height:48,
-        width:327,
+        // width:327,
+        width:FULL_WIDTH*.9,
+        // paddingHorizontal:"50%",
         borderRadius:8,
         alignItems:"center",
         alignSelf:"center",

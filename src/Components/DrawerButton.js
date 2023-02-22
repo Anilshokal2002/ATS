@@ -34,7 +34,7 @@ const DrawerButton = ({data,question}) => {
 
             {clicked ? (
                 <View style={styles.component}>
-                <Image source={IMAGE.Line} style={{width:295,height:2,alignSelf:"center"}}/>
+                <Image source={IMAGE.Line} style={{height:2,alignSelf:"center"}}/>
                     <View style={{}}>
                         <Text style={{margin:16}}>
                             {data}
@@ -49,8 +49,9 @@ export default DrawerButton
 
 const styles = StyleSheet.create({
     TouchableOpacity: {
-        width: 327,
+        // width: 327,
         // height: 50,
+        // marginHorizontal:"15%",
         borderRadius: 8,
         // borderWidth: 0.5,
         alignSelf: 'center',
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
 
     },
     TouchableOpacity2: {
-        width: 327,
+        // width: 327,
         // height: 50,
         borderRadius: 8,
         // borderWidth: 0.5,
@@ -88,8 +89,8 @@ const styles = StyleSheet.create({
         // elevation: 5,
         // marginTop: 1,
         // height: 300,
-        alignSelf: 'center',
-        width: 327,
+        // alignSelf: 'center',
+        // width: 327,
         backgroundColor: '#fff',
         borderRadius:8,
         borderTopRightRadius:0,

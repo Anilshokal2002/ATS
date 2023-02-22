@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   label: {
-    fontSize: 20,
+    fontSize: 16,
     paddingLeft: 10,
     marginHorizontal: 10,
     borderLeftWidth: 2,

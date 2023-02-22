@@ -8,61 +8,61 @@ const ModalComponent = () => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
-            <View style={styles.centeredView}>
-                <Modal
-                    // animationType="slide"
-                    transparent={true}
-                    visible={modalVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                        setModalVisible(!modalVisible);
-                    }}>
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <View style={{ backgroundColor: Colors.primary, }}>
-                                <View style={[styles.item, { backgroundColor: Colors.primary, borderBottomWidth: 1, borderColor: "#FFF", borderBottomEndRadius: 0, borderBottomStartRadius: 0 }]}>
-                                    <Text style={[styles.title, { color: "#FFF" }]}>{item.title1}</Text>
-                                    <Text style={[styles.title, { color: "#FFF" }]}>{item.title2}</Text>
-                                    <Text style={[styles.title, { color: "#FFF" }]}>{item.title3}</Text>
-                                    <Text style={[styles.title, { color: "#FFF" }]}>{item.title4}</Text>
-                                </View>
-                                <View style={{}}>
-                                    <Text style={styles.modalTextComponent}>Sport:Speed Superbike</Text>
-                                    <Text style={styles.modalTextComponent}>Formula:Formula 2</Text>
-                                    <Text style={styles.modalTextComponent}>Option:None</Text>
-                                    <Text style={styles.modalTextComponent}>Destination:Andorra</Text>
-                                    <Text style={styles.modalTextComponent}>Coverage Period:6 days</Text>
-                                </View>
+        <View style={styles.centeredView}>
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert('Modal has been closed.');
+                    setModalVisible(!modalVisible);
+                }}>
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <View style={{ backgroundColor: Colors.primary, }}>
+                            <View style={[styles.item, { backgroundColor: Colors.primary, borderBottomWidth: 1, borderColor: "#FFF", borderBottomEndRadius: 0, borderBottomStartRadius: 0 }]}>
+                                <Text style={[styles.title, { color: "#FFF" }]}>{item.title1}</Text>
+                                <Text style={[styles.title, { color: "#FFF" }]}>{item.title2}</Text>
+                                <Text style={[styles.title, { color: "#FFF" }]}>{item.title3}</Text>
+                                <Text style={[styles.title, { color: "#FFF" }]}>{item.title4}</Text>
                             </View>
-                            <View style={{ backgroundColor: "red", justifyContent: "center" }}>
-                                <TouchableOpacity >
-                                    <View style={styles.modalButton}>
-                                        <Image source={IMAGE.Subscribe} />
-                                        <Text>Subscribe</Text>
-                                    </View>
-                                </TouchableOpacity>
-                                <TouchableOpacity >
-                                    <View style={styles.modalButton}>
-                                        <Image source={IMAGE.edit} />
-                                        <Text>Modify</Text>
-                                    </View>
-                                </TouchableOpacity>
-                                <TouchableOpacity >
-                                    <View style={styles.modalButton}>
-                                        <Image source={IMAGE.file_download} />
-                                        <Text>Download</Text>
-                                    </View>
-                                </TouchableOpacity>
+                            <View style={{}}>
+                                <Text style={styles.modalTextComponent}>Sport:Speed Superbike</Text>
+                                <Text style={styles.modalTextComponent}>Formula:Formula 2</Text>
+                                <Text style={styles.modalTextComponent}>Option:None</Text>
+                                <Text style={styles.modalTextComponent}>Destination:Andorra</Text>
+                                <Text style={styles.modalTextComponent}>Coverage Period:6 days</Text>
                             </View>
-                            <TouchableOpacity
-                                style={[styles.button, styles.buttonClose]}
-                                onPress={() => setModalVisible(!modalVisible)}>
-                                <Text style={styles.textStyle}>Hide Modal</Text>
+                        </View>
+                        <View style={{ backgroundColor: "red", justifyContent: "center" }}>
+                            <TouchableOpacity >
+                                <View style={styles.modalButton}>
+                                    <Image source={IMAGE.Subscribe} />
+                                    <Text>Subscribe</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity >
+                                <View style={styles.modalButton}>
+                                    <Image source={IMAGE.edit} />
+                                    <Text>Modify</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity >
+                                <View style={styles.modalButton}>
+                                    <Image source={IMAGE.file_download} />
+                                    <Text>Download</Text>
+                                </View>
                             </TouchableOpacity>
                         </View>
+                        <TouchableOpacity
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}>
+                            <Text style={styles.textStyle}>Hide Modal</Text>
+                        </TouchableOpacity>
                     </View>
-                </Modal>
-            </View>
+                </View>
+            </Modal>
+        </View>
     )
 }
 
@@ -122,12 +122,12 @@ const styles = StyleSheet.create({
         Colors: "#FFF",
         // fontSize:20
     },
-    modalButton:{
-        margin:6,
-        width:295,
-        justifyContent:"center",
-        borderRadius:8,
-        flexDirection:"row",
-        alignSelf:"flex-start"
+    modalButton: {
+        margin: 6,
+        width: 295,
+        justifyContent: "center",
+        borderRadius: 8,
+        flexDirection: "row",
+        alignSelf: "flex-start"
     }
 })

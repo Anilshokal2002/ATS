@@ -6,7 +6,6 @@ import { IMAGE } from '../../Constant/Images'
 import SettingComponent from "../../Components/SettingComponent"
 import { Modal } from 'react-native'
 import auth from '@react-native-firebase/auth';
-import { StackActions } from '@react-navigation/native'
 
 const Setting = ({ navigation }) => {
 
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
     modalView: {
         backgroundColor: 'white',
         elevation: 10,
-        width: 327,
+        // width: 327,
         borderRadius: 10
 
     },

@@ -15,7 +15,7 @@ const TermsAndConditions = ({navigation}) => {
             />
             <View>
                 <View>
-                    <Image source={IMAGE.Rectangle_dot} style={{ height: 104, width: 327, justifyContent: "center", alignSelf: "center" }} />
+                    <Image source={IMAGE.Rectangle_dot} style={styles.img} />
                 </View>
                 <Buttons
                     btn_text={"Download in English"}
@@ -38,4 +38,10 @@ const TermsAndConditions = ({navigation}) => {
 }
 export default TermsAndConditions
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    img:{ 
+        height: 104, 
+        width: 327, 
+        justifyContent: "center", 
+        alignSelf: "center" }
+})

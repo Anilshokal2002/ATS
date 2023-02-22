@@ -7,6 +7,7 @@ import Colors from '../../Constant/Colors'
 import AccountData from '../../Components/AccountData'
 import AccountData1 from '../../Components/AccountDate1'
 import Auth from "@react-native-firebase/auth"
+import { FULL_WIDTH, RADIUS } from '../../Components/HOC/layout'
 
 const FormData = ({ title, input, dataStyle }) => {
   return (
@@ -24,7 +25,7 @@ const MyAccount = ({ navigation }) => {
     <ScrollView style={{flex:1}}
       showsVerticalScrollIndicator={false}
     >
-      <View style={{ margin: 15, }}>
+      <View style={{ margin:"4%", }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View>
             <View style={{ flexDirection: "row" }}>
@@ -65,7 +66,7 @@ const MyAccount = ({ navigation }) => {
                 />
                 <FormData
                   title={"E-mail address"}
-                  input={Auth().currentUser.email}
+                  input={"arfin"}
                 />
                 <FormData
                   title={"Address1"}
@@ -165,8 +166,9 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: "#fff",
-    width: "95%",
-    borderRadius: 12,
+    // width: "95%",
+    width:FULL_WIDTH*.9,
+    borderRadius:12,
     margin: 24,
     alignSelf: "center",
   },

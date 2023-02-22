@@ -6,6 +6,7 @@ import Buttons from '../../Components/Button'
 import DataItem from '../../Components/DataItem'
 import DataItemContract from '../../Components/DataItemContract'
 import Auth from "@react-native-firebase/auth"
+import { FULL_HEIGHT, FULL_WIDTH } from '../../Components/HOC/layout'
 
 
 const Home = ({ navigation }) => {
@@ -33,6 +34,7 @@ const Home = ({ navigation }) => {
       </View>
 
       <View style={{ marginTop: "3%", }}>
+      <View style={{width:FULL_WIDTH*.9}}>
         <ImageBackground style={styles.rectangle} source={IMAGE.Background}>
           <View style={styles.totalEstimations}>
             <View>
@@ -49,6 +51,7 @@ const Home = ({ navigation }) => {
             color={Colors.primary}
           />
         </ImageBackground>
+        </View>
         <View style={styles.View2}>
           <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
             <Text style={styles.EstimationText}>Estimations</Text>
@@ -113,15 +116,22 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   rectangle: {
-    height:140,
-    width: "100%",
-    borderRadius: 16,
-    alignSelf:"center"
+    // height:140,
+    height:FULL_HEIGHT*.187,
+    // width:FULL_WIDTH*.9,
+    borderRadius:20,
+    // alignSelf:"center",
+    justifyContent:"space-around",
+    // alignItems:"center",
+paddingHorizontal:"10%"  
   },
   totalEstimations: {
     flexDirection: "row",
-    margin: 12,
-    justifyContent: "space-between"
+    // margin: 12,
+    // alignSelf:"center",
+    alignItems:"center",
+    justifyContent: "space-around",
+    
   },
   totalTextNumber: {
     fontSize: 20,
@@ -135,13 +145,13 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   rectangleButton: {
-    width: 287,
+    width:FULL_WIDTH*.8,
+    
     height: 44,
     backgroundColor: "#fff"
   },
   View2: {
     marginTop: 15,
-
   },
   SeeAll: {
     fontSize: 14,

@@ -2,6 +2,7 @@ import { Button, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-n
 import React, { useState } from 'react'
 import DatePicker from 'react-native-date-picker'
 import { IMAGE } from '../Constant/Images'
+import { FULL_WIDTH } from './HOC/layout'
 
 const datePicker = ({
     labelText ={},
@@ -52,7 +53,7 @@ export default datePicker
 const styles = StyleSheet.create({
 
     TouchableOpacity: {
-        width: 327,
+        width: FULL_WIDTH*.9,
         height: 48,
         borderRadius: 10,
         // borderWidth: 0.5,
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
         paddingLeft: 5
     },
     label: {
-        width: 327,
+        width: FULL_WIDTH*.9,
         alignSelf: "center",
         marginTop: 8,
     },

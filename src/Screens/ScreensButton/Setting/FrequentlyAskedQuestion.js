@@ -44,7 +44,7 @@ export default FrequentlyAskedQuestion
 
 const styles = StyleSheet.create({
     TouchableOpacity: {
-        width: 327,
+        // width: 327,
         height: 50,
         borderRadius: 10,
         // borderWidth: 0.5,

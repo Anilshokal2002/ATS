@@ -35,11 +35,12 @@ const styles = StyleSheet.create({
     TouchableOpacity: {
         // position: "absolute",
         height: 80,
-        width: 327,
+        // width: 327,
         backgroundColor: Colors.primary,
-        alignSelf: "center",
+        // alignSelf: "center",
         borderRadius: 8,
         // flex: 1,
-        marginTop: "3%"
+        margin: "3%",
+        marginVertical:"1.5%"
     },
 })

@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native'
 import Colors from "../Constant/Colors"
+import { FULL_WIDTH } from './HOC/layout'
 const CommonTextInput = ({
     placeholder = '',
     style,
@@ -20,7 +21,7 @@ const CommonTextInput = ({
         <ScrollView
             showsVerticalScrollIndicator={false}
         >
-            <View style={{ width: 327, alignSelf: "center" }}>
+            <View style={{ alignSelf: "center" }}>
                 {labelText ?
                     <View style={[styles.label, { flexDirection: "row" }]}>
                         <View style={{ height: 16, width: 2, backgroundColor: Colors.primary }}></View>
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     TextInputStyle: {
         flexDirection: 'row',
         backgroundColor: "#fff",
-        width: 327,
+        width:FULL_WIDTH*.9,
         borderRadius: 10,
         height: 48,
         paddingLeft: 10,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         fontWeight: "400",
         position: 'absolute',
-        width: 327,
+        // width: 327,
     },
     touchable: {
         width: 40,
@@ -96,8 +97,8 @@ const styles = StyleSheet.create({
         tintColor: "#000E32",
     },
     label: {
-        width: 327,
-        alignSelf: "center",
+        // width: 327,
+        // alignSelf: "center",
         marginTop: 8,
     },
     labelText: {

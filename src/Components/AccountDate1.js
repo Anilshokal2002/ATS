@@ -65,7 +65,7 @@ export default AccountData1
 const styles = StyleSheet.create({
     item: {
         height: 48,
-        width: 327,
+        // width: 327,
         borderRadius: 8,
         backgroundColor: "#ffffff",
         flexDirection: "row",

@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import React, { useRef, useState } from 'react';
 import Colors from '../Constant/Colors';
+import { FULL_WIDTH } from './HOC/layout';
 const Textinput = (
   {
     text={},
@@ -122,7 +123,7 @@ const Textinput = (
 export default Textinput;
 const styles = StyleSheet.create({
   search: {
-    width: '90%',
+    width: FULL_WIDTH,
     height: 50,
     alignSelf: 'center',
     borderWidth: 0.2,
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   TouchableOpacity: {
-    width: 327,
+    width: FULL_WIDTH*.9,
     height: 48,
     borderRadius: 10,
     alignSelf: 'center',
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   label: {
-    width: 327,
+    width:FULL_WIDTH*.9,
     alignSelf: "center",
     marginTop: 8,
 },

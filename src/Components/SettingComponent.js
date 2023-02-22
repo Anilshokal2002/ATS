@@ -29,7 +29,7 @@ export default SettingComponent
 const styles = StyleSheet.create({
     touchableOpacity:{ 
         height: 48, 
-        width: 327, 
+        // width: 327, 
         backgroundColor: "#fff", 
         borderRadius: 8, 
         justifyContent: "center", 

@@ -6,6 +6,7 @@ import Colors from '../../Constant/Colors'
 import CommonTextInput from '../../Components/CommonTextInput'
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import { FULL_HEIGHT, FULL_WIDTH, STANDARD_WIDTH } from '../../Components/HOC/layout'
 const Contact = ({ navigation }) => {
   return (
     <ScrollView
@@ -46,15 +47,15 @@ const Contact = ({ navigation }) => {
               <View>
                 <Image source={IMAGE.backgroundOfContact} style={styles.backgroundOfContact} />
               </View>
-              <View style={{ flexDirection: "row", justifyContent: "space-between", width: 327, alignSelf: "center", }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-around",  alignSelf: "center", width:FULL_WIDTH}}>
                 <Buttons
-                  style={{ width: 156, height: 46, backgroundColor: "#F0C551" }}
+                  style={{  backgroundColor: "#F0C551" ,width:FULL_WIDTH*.4}}
                   btn_text={"Report Damage"}
                   color={Colors.black}
                   on_press={() => { navigation.navigate("ReportDamage") }}
                 />
                 <Buttons
-                  style={{ width: 156, height: 46, backgroundColor: Colors.primary }}
+                  style={{  backgroundColor: Colors.primary,width:FULL_WIDTH*.4 }}
                   color="#fff"
                   btn_text={"Custom Contract"}
                   on_press={() => { navigation.navigate("CustomContactForm") }}
@@ -152,10 +153,12 @@ const styles = StyleSheet.create({
     color: Colors.black
   },
   backgroundOfContact: {
-    height: 140,
-    width: 327,
+    height:FULL_HEIGHT*.187,
+    // width: 327,
+    width:FULL_WIDTH*.9,
     // justifyContent:"center",
-    alignSelf: "center"
+    alignSelf: "center",
+    // margin:"10%",
   },
   imageContainer: {
     position: "absolute",
